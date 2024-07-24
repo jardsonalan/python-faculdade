@@ -10,5 +10,5 @@ elif idade > 45 and idade <= 59:
     print('Valor: R$150,00')
 elif idade > 59 and idade <= 65:
     print('Valor: R$250,00')
-elif idade > 65:
+else:
     print('Valor: R$400,00')
