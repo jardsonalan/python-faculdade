@@ -1,5 +1,4 @@
-n = 1
-for n in (11):
+for n in range(1, 10+1):
     print(n)
     print(n*10)
     print(n*100)

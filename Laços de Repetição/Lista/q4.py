@@ -5,4 +5,4 @@ for contador in range(10):
     if num > maior:
         maior = num
     
-    print(maior)
+    print(f"O maior número: {maior}")
