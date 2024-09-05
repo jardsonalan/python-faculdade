@@ -1,3 +1,4 @@
+# Questão 4
 qtd_alunos = int(input("Informe a quantidade de alunos: "))
 
 aprovado = []

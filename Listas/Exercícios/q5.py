@@ -1,4 +1,5 @@
-par = [0]
+# Questão 5
+par = []
 impar = []
 listaCompleta = []
 
