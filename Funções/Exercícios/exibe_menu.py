@@ -3,6 +3,8 @@ def exibeMenu():
     print('0 - SAIR')
     print('1 - SOMAR')
     print('2 - SUBTRAIR')
+    print('3 - MULTIPLICAR')
+    print('4 - DIVIDIR')
     opcao = int(input('Escolha uma opção: '))
     return opcao
 
@@ -12,6 +14,14 @@ def somar(numero1, numero2):
 
 def subtrair(numero1, numero2):
     resultado = numero1-numero2
+    return resultado
+
+def multiplicar(numero1, numero2):
+    resultado = numero1*numero2
+    return resultado
+
+def dividir(numero1, numero2):
+    resultado = numero1/numero2
     return resultado
 
 opcao=1
@@ -32,5 +42,11 @@ while opcao != 0:
 
     elif opcao == 2:
         resultado = subtrair(num1, num2)
+
+    elif opcao == 3:
+        resultado = multiplicar(num1, num2)
+
+    elif opcao == 4:
+        resultado = dividir(num1, num2)
 
     print(f'Resultado: {resultado}')
