@@ -8,18 +8,18 @@ def exibeOpcoes():
     return opcao
 
 def acenderLampada():
-    estado = 'Acesa'
-    return estado
+    global lampada
+    lampada = True
 
-def apagarLampada():
-    estado = 'Apagada'
-    return estado
-
-def exibirStatus(estadoAtual):
-    print(f'O estado atual da lâmpada: {estadoAtual}\n')
+def exibirStatus():
+    global lampada
+    if lampada:
+        print('Lâmpada acesa')
+    else:
+        print('Lâmpada apagada')
 
 opcao=1
-estado='Apagada'
+lampada = False
 
 while opcao != 0:
     opcao = exibeOpcoes()
@@ -28,12 +28,10 @@ while opcao != 0:
         break
     
     elif opcao == 1:
-        estado = acenderLampada()
-        print(f'Estado da lâmpada: {estado}\n')
+        acenderLampada()
     
     elif opcao == 2:
-        estado = apagarLampada()
-        print(f'Estado da lâmpada: {estado}\n')
+        lampada = False
 
     elif opcao == 3:
-        exibirStatus(estado)
+        exibirStatus()

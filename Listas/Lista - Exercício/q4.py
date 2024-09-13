@@ -7,5 +7,11 @@ for i in range(qtd_numeros):
     a.append(num)
 
 busca = int(input("Qual número deseja buscar: "))
-retorno = a.count(busca)
-print(f'O número ({busca}) aparece: {retorno}')
+
+totalVezes = 0
+
+for c in a:
+    if busca == c:
+        totalVezes += 1
+    
+print(f"O número {busca} aparece: {totalVezes}")
