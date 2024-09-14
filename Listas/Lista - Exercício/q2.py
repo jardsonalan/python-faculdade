@@ -2,15 +2,15 @@ listaNum=[]
 
 for i in range(10):
     num = int(input('Informe um número: '))
+    listaNum.append(num)
 
-    if num % 2 == 0:
-        listaNum.append(1)
+for c in range(10):
+    if listaNum[c] % 2 == 0:
+        listaNum[c] = 1
     else:
-        listaNum.append(-1)
+        listaNum[c] = -1
 
-i=0
 print('-'*40)
-while i < len(listaNum):
-    print(listaNum[i])
-    i+=1
+for b in listaNum:
+    print(b)
 print('-'*40)

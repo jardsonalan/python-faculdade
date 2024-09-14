@@ -1,11 +1,20 @@
-k = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+k = []
+
+for i in range(30):
+    num = int(input(f'Informe o {i+1}° número: '))
+    k.append(num)
 
 aux = 0
 
-for i in k:
-    if i % 2 != 0:
-        aux = i
-        if i % 2 == 0:
-            k.insert(i, aux)
+for a in range(30):
+    if k[a] % 2 != 0:
+        aux = k[a]
+    
+    if k[a] % 2 == 0:
+        if aux % 2 == 0:
+            k[a] = k[a]
+        else:
+            k[a-1] = k[a]
+            k[a] = aux
 
-    print(i)
+print(k)
