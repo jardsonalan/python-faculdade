@@ -10,13 +10,13 @@ def exibeOpcoes():
     num = int(input('Informe uma opção do menu: '))
     return num
 
-def acenderLampada(valorLampada):
-    listaLampadas[valorLampada]='acesa'
-    print(f'Lâmpada {valorLampada}: {listaLampadas[valorLampada]}')
+def acenderLampada():
+    global lampada
+    lampada = True
 
-def apagarLampada(valorLampada):
-    listaLampadas[valorLampada]='apagada'
-    print(f'Lâmpada {valorLampada}: {listaLampadas[valorLampada]}')
+def apagarLampada():
+    global lampada
+    lampada = False
     
 
 def exibirStatusLampada(numLampada):
@@ -25,6 +25,8 @@ def exibirStatusLampada(numLampada):
 def exibirTodas():
     for i in range(1, len(listaLampadas)):
         print(f'Lâmpada {i}: {listaLampadas[i]}')
+
+lampada = False
 
 def main():
     num = 1
@@ -40,14 +42,20 @@ def main():
             if posLampada <= 0 or posLampada > 20:
                 print('Você ultrapassou o tamanho da lista.')
             else:
-                acenderLampada(posLampada)
+                acenderLampada()
+
+                if lampada:
+                    listaLampadas[posLampada]='acesa'
 
         elif num == 2:
             posLampada = int(input('Informe qual lâmpada você deseja apagar (1-20): '))
             if posLampada <= 0 or posLampada > 20:
                 print('Você ultrapassou o tamanho da lista.')
             else:
-                apagarLampada(posLampada)
+                apagarLampada()
+
+                if lampada == False:
+                    listaLampadas[posLampada]='apagada'
 
         elif num == 3:
             posLampada = int(input('Informe qual lâmpada você deseja saber o status (1-20): '))
