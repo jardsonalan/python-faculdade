@@ -38,7 +38,6 @@ class Corrida:
 
     def calculo_turno(self):
         for idx, carro in enumerate(self.carros):
-            sleep(0.5)
             # Sorteio relativo a sair da corrida
             if (randint(0, 100) <= 2) and (not carro.quebrado):
                 print(f'Grave acidente na pista, {carro.id} capotou 1000 vezes')
@@ -59,17 +58,15 @@ class Corrida:
         print('Ranking:')
         posicao = 1
         for idx, velocidade in ordenada:
-            sleep(0.5)
             print(f'{posicao}: {self.carros[idx].id} ({velocidade})')
             posicao+=1
     
     def corrida(self):
         for i in range(self.rodadas):
-            sleep(0.5)
             self.calculo_turno()
         
-        sleep(0.5)
         self.ranking()
+        sleep(0.5)
 
     def executar(self):
         self.largada()
@@ -83,9 +80,6 @@ carros = [
     Carro('Marta'),
     Carro('Beatriz')
 ]
-
-carro1 = Carro('Rubinho', 0)
-carro2 = Carro('João', 0)
 
 corrida = Corrida(carros, 30)
 corrida.executar()
